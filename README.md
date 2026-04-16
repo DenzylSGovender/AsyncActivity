@@ -69,7 +69,7 @@ Grades loaded.
 Notifications loaded.
 Schedule loaded.
 All data fetched.
-
+---
 ---
 Step 3: Convert to Asynchronous Calls
 
@@ -124,6 +124,7 @@ class Program
 ```
 ---
 Expected Output (~2 seconds total)
+---
 Fetching student portal data...
 Grades loaded.
 Notifications loaded.
