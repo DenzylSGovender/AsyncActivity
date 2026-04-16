@@ -70,7 +70,9 @@ Notifications loaded.
 Schedule loaded.
 All data fetched.
 
+---
 Step 3: Convert to Asynchronous Calls
+
 Convert each service method to async Task
 Replace Thread.Sleep() with await Task.Delay()
 Make Main asynchronous: static async Task Main()
@@ -120,7 +122,7 @@ class Program
     }
 }
 ```
-
+---
 Expected Output (~2 seconds total)
 Fetching student portal data...
 Grades loaded.
@@ -128,4 +130,4 @@ Notifications loaded.
 Schedule loaded.
 All data fetched.
 Total time: 2010 ms
-
+---
