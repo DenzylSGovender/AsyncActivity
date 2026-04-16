@@ -61,8 +61,9 @@ class Program
     }
 }
 ```
-
+---
 Expected Output (~6 seconds total)
+---
 Fetching student portal data...
 Grades loaded.
 Notifications loaded.
@@ -74,7 +75,8 @@ Convert each service method to async Task
 Replace Thread.Sleep() with await Task.Delay()
 Make Main asynchronous: static async Task Main()
 Run all tasks in parallel using Task.WhenAll()
-
+---
+```
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
