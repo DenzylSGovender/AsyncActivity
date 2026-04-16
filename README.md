@@ -63,3 +63,67 @@ class Program
 ```
 
 Expected Output (~6 seconds total)
+Fetching student portal data...
+Grades loaded.
+Notifications loaded.
+Schedule loaded.
+All data fetched.
+
+Step 3: Convert to Asynchronous Calls
+Convert each service method to async Task
+Replace Thread.Sleep() with await Task.Delay()
+Make Main asynchronous: static async Task Main()
+Run all tasks in parallel using Task.WhenAll()
+
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        Console.WriteLine("Fetching student portal data...");
+
+        Stopwatch sw = Stopwatch.StartNew();
+
+        // Run tasks asynchronously
+        Task gradesTask = GetGradesAsync();
+        Task notificationsTask = GetNotificationsAsync();
+        Task scheduleTask = GetScheduleAsync();
+
+        await Task.WhenAll(gradesTask, notificationsTask, scheduleTask);
+
+        sw.Stop();
+        Console.WriteLine("All data fetched.");
+        Console.WriteLine($"Total time: {sw.ElapsedMilliseconds} ms");
+    }
+
+    static async Task GetGradesAsync()
+    {
+        await Task.Delay(2000); // Simulate network delay
+        Console.WriteLine("Grades loaded.");
+    }
+
+    static async Task GetNotificationsAsync()
+    {
+        await Task.Delay(2000); // Simulate network delay
+        Console.WriteLine("Notifications loaded.");
+    }
+
+    static async Task GetScheduleAsync()
+    {
+        await Task.Delay(2000); // Simulate network delay
+        Console.WriteLine("Schedule loaded.");
+    }
+}
+```
+
+Expected Output (~2 seconds total)
+Fetching student portal data...
+Grades loaded.
+Notifications loaded.
+Schedule loaded.
+All data fetched.
+Total time: 2010 ms
+
